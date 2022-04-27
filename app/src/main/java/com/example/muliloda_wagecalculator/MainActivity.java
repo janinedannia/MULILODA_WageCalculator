@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        employeeName = findViewById(R.id.employeeName);
-        hoursWorked = findViewById(R.id.hoursWorked);
+        employeeName = findViewById(R.id.name);
+        hoursWorked = findViewById(R.id.hours);
         radioGroup = findViewById(R.id.radioGroup);
         btnCompute =findViewById(R.id.btnCompute);
         btnCompute.setOnClickListener(this);
@@ -34,21 +34,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 public void onClick(View v) {
 
-    switch(v.getId()){
-        case R.id.btnCompute:
+    if (v.getId() == R.id.btnCompute) {
             int selectedEmployeeType = radioGroup.getCheckedRadioButtonId();
-            btnSelected = findViewById(selectedEmployeeType);
+            btnCompute = findViewById(selectedEmployeeType);
 
-            String type = btnSelected.getText().toString();
-            String hours = (hoursWorked.getText().toString());
+            String type = btnCompute.getText().toString();
+            String name = employeeName.getText().toString();
+            String hours = ( hoursWorked.getText().toString() );
 
             Intent intent = new Intent(this,ResultsScreen.class);
 
-            intent.putExtra("radioGroup",type);
-            intent.putExtra("hoursWorked",hours);
+            intent.putExtra("type",type);
+            intent.putExtra("hours", hours);
+            intent.putExtra("employeeName", name);
             startActivity(intent);
-
-            break;
 
 }
 }}

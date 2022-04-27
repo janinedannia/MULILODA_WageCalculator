@@ -16,7 +16,7 @@
         android:text="WAGE CALCULATOR"
         android:textColor="#ffffff"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/employeeName"
+        app:layout_constraintBottom_toTopOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.04" />
 
     <TextView
-        android:id="@+id/employeeName"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alfa_slab_one"
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employeeName" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <TextView
         android:id="@+id/employeeType"
@@ -72,7 +72,7 @@
         android:layout_width="192dp"
         android:layout_height="139dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/hoursWorked"
+        app:layout_constraintBottom_toTopOf="@+id/hours"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,7 +125,7 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/hoursWorked"
+        android:id="@+id/hours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alfa_slab_one"
@@ -152,7 +152,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hoursWorked" />
+        app:layout_constraintTop_toBottomOf="@+id/hours" />
 
     <Button
         android:id="@+id/btnCompute"
