@@ -15,7 +15,7 @@ import android.widget.TextView;
 public class ResultsScreen extends AppCompatActivity implements View.OnClickListener {
 
 
-    TextView totalWageValue, totalOvertimeValue, totalRegularValue, hoursRenderedValue, hoursOvertimeValue;
+    TextView txtWage, txtOvertimeWage, txtRegularWage, txtHours, txtOvertimeHours;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -23,11 +23,11 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results_screen);
 
-        totalWageValue = findViewById(R.id.totalWageValue);
-        totalOvertimeValue = findViewById(R.id.totalOvertimeValue);
-        totalRegularValue = findViewById(R.id.totalRegularValue);
-        hoursRenderedValue = findViewById(R.id.hoursRenderedValue);
-        hoursOvertimeValue = findViewById(R.id.hoursOvertimeValue);
+        txtWage = findViewById(R.id.totalWageValue);
+        txtOvertimeWage = findViewById(R.id.totalOvertimeValue);
+        txtRegularWage = findViewById(R.id.totalRegularValue);
+        txtHours = findViewById(R.id.hoursRenderedValue);
+        txtOvertimeHours = findViewById(R.id.hoursOvertimeValue);
 
         Button btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(this);
@@ -38,13 +38,13 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
         String EmployeeName = i.getStringExtra("empName");
         Double EmployeeHours = Double.parseDouble(i.getStringExtra("hours"));
 
-        hoursRenderedValue.setText(String.valueOf(EmployeeHours));
-        compWage(EmployeeType, EmployeeHours, totalWageValue, totalRegularValue, totalOvertimeValue);
+        txtHours.setText(String.valueOf(EmployeeHours));
+        compWage(EmployeeType, EmployeeHours, txtWage, txtRegularWage, txtOvertimeHours);
 
     }
 
     @SuppressLint("SetTextI18n")
-    public void compWage(String employeeType, Double employeeHours, TextView totalWageValue, TextView totalOvertimeValue, TextView totalRegularValue) {
+    public void compWage(String employeeType, Double employeeHours, TextView txtWage, TextView txtOvertimeWage, TextView txtRegularWage) {
         double wage = 0.0;
         double otWage = 0.0;
 
@@ -55,13 +55,13 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
                     wage = (employeeHours * 115) + 800;
                     otWage = employeeHours * 115;
 
-                    totalWageValue.setText("P" + wage);
-                    totalRegularValue.setText("800");
-                    totalOvertimeValue.setText("P" + otWage);
+                    txtWage.setText("P" + String.valueOf(wage));
+                    txtRegularWage.setText("P800");
+                    txtOvertimeWage.setText("P" + String.valueOf(otWage));
                 } else {
                     wage = employeeHours * 100;
-                    totalWageValue.setText("P" + wage);
-                    totalRegularValue.setText("P" + wage);
+                    txtWage.setText("P" + String.valueOf(wage));
+                    txtRegularWage.setText("P" + String.valueOf(wage));
                 }
                 break;
             case "probationary":
@@ -70,28 +70,28 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
                     wage = (employeeHours * 100) + 720;
                     otWage = employeeHours * 100;
 
-                    totalWageValue.setText("P" + wage);
-                    totalRegularValue.setText("P720");
-                    totalOvertimeValue.setText("P" + otWage);
+                    txtWage.setText("P" + String.valueOf(wage));
+                    txtRegularWage.setText("P720");
+                    txtOvertimeWage.setText("P" + String.valueOf(otWage));
                 } else {
                     wage = employeeHours * 90;
-                    totalWageValue.setText("P" + wage);
-                    totalRegularValue.setText("P" + wage);
+                    txtWage.setText("P" + wage);
+                    txtRegularWage.setText("P" + wage);
                 }
                 break;
             case "part-time":
-                if (employeeHours > 8) {
+                if (employeeHours > 8.0) {
                     employeeHours = employeeHours - 8;
                     wage = (employeeHours * 90) + 600;
                     otWage = employeeHours * 90;
 
-                    totalWageValue.setText("P" + wage);
-                    totalRegularValue.setText("P600");
-                    totalOvertimeValue.setText("P" + otWage);
+                    txtWage.setText("P" + String.valueOf(wage));
+                    txtRegularWage.setText("P600");
+                    txtOvertimeWage.setText("P" + String.valueOf(otWage));
                 } else {
                     wage = employeeHours * 75;
-                    totalWageValue.setText("P" + wage);
-                    totalRegularValue.setText("P" + wage);
+                    txtWage.setText("P" + String.valueOf(wage));
+                    txtRegularWage.setText("P" + String.valueOf(wage));
                 }
                 break;
         }
