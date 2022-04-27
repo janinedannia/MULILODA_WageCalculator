@@ -7,6 +7,21 @@
     android:background="#9F79A1"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/Compute"
+        android:layout_width="144dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="#ffffff"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="COMPUTE"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fillin2"
+        app:layout_constraintVertical_bias="0.922" />
 
     <TextView
         android:id="@+id/resultsTitle"
@@ -154,21 +169,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hours" />
 
-    <Button
-        android:id="@+id/btnCompute"
-        android:layout_width="144dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="56dp"
-        android:backgroundTint="#ffffff"
-        android:fontFamily="@font/alfa_slab_one"
-        android:text="COMPUTE"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fillin2"
-        app:layout_constraintVertical_bias="0.922" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

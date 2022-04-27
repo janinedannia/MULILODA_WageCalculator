@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
@@ -17,7 +16,6 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
 
 
     TextView totalWageValue, totalOvertimeValue, totalRegularValue, hoursRenderedValue, hoursOvertimeValue;
-    RadioGroup radioGroup;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -25,12 +23,11 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results_screen);
 
-        totalWageValue = findViewById(R.id.totalWage);
-        totalOvertimeValue = findViewById(R.id.totalOvertime);
-        totalRegularValue = findViewById(R.id.totalRegular);
-        hoursRenderedValue = findViewById(R.id.hoursRendered);
-        hoursOvertimeValue = findViewById(R.id.hoursOvertime);
-        radioGroup = findViewById(R.id.radioGroup);
+        totalWageValue = findViewById(R.id.totalWageValue);
+        totalOvertimeValue = findViewById(R.id.totalOvertimeValue);
+        totalRegularValue = findViewById(R.id.totalRegularValue);
+        hoursRenderedValue = findViewById(R.id.hoursRenderedValue);
+        hoursOvertimeValue = findViewById(R.id.hoursOvertimeValue);
 
         Button btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(this);
@@ -38,18 +35,17 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
         Intent i = getIntent();
 
         String EmployeeType = i.getStringExtra("type");
-        String EmployeeName = i.getStringExtra("employeeName");
         Double EmployeeHours = Double.parseDouble(i.getStringExtra("hours"));
 
         hoursRenderedValue.setText(String.valueOf(EmployeeHours));
-        calcWage(EmployeeType, EmployeeHours, totalWageValue, totalRegularValue, totalOvertimeValue);
+        compWage(EmployeeType, EmployeeHours, totalWageValue, totalRegularValue, totalOvertimeValue);
 
 
 
     }
 
     @SuppressLint("SetTextI18n")
-    public void calcWage(String employeeType, Double employeeHours, TextView totalWageValue, TextView totalOvertimeValue, TextView totalRegularValue) {
+    public void compWage(String employeeType, Double employeeHours, TextView totalWageValue, TextView totalOvertimeValue, TextView totalRegularValue) {
         double wage = 0.0;
         double otWage = 0.0;
 

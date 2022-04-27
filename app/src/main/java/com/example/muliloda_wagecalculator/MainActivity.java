@@ -16,8 +16,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     TextView employeeName, hoursWorked;
     RadioGroup radioGroup;
-    Button btnCompute;
-    RadioButton btnSelect;
+    RadioButton btnSelected;
+    Button Compute;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         radioGroup = findViewById(R.id.radioGroup);
 
-        btnCompute = findViewById(R.id.btnCompute);
-        btnCompute.setOnClickListener(this);
+        Compute = findViewById(R.id.btnCompute);
+        Compute.setOnClickListener(this);
     }
 
     public void onClick(View v) {
@@ -39,9 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v.getId() == R.id.btnCompute) {
             int selectedEmployeeType = radioGroup.getCheckedRadioButtonId();
 
-            btnCompute = findViewById(selectedEmployeeType);
+            Compute = findViewById(selectedEmployeeType);
 
-            String type = btnCompute.getText().toString();
+            String type = Compute.getText().toString();
 
             String name = employeeName.getText().toString();
 
@@ -51,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             intent.putExtra("type", type);
             intent.putExtra("hours", hours);
-            intent.putExtra("employeeName", name);
 
             startActivity(intent);
 
