@@ -37,7 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
 
-        if (v.getId() == R.id.Compute) {
+       switch(v.getId()){
+           case R.id.Compute:
             int selectedEmployeeType = radioGroup.getCheckedRadioButtonId();
 
             Compute = findViewById(selectedEmployeeType);
@@ -45,14 +46,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String type = Compute.getText().toString();
 
             String name = employeeName.getText().toString();
-
             String hours = (hoursWorked.getText().toString());
 
-            Intent intent = new Intent(MainActivity.this, ResultsScreen.class);
+            Intent intent = new Intent(MainActivity.this,ResultsScreen.class);
 
             intent.putExtra("type", type);
             intent.putExtra("hours", hours);
-
+            intent.putExtra("empName",name);
             startActivity(intent);
 
 
