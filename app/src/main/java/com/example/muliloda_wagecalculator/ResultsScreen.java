@@ -6,15 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Display;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import org.w3c.dom.Text;
+
 
 public class ResultsScreen extends AppCompatActivity implements View.OnClickListener {
 
@@ -54,7 +52,7 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
         double otWage = 0.0;
 
         switch (employeeType) {
-            case "Regular":
+            case "regular":
                 if (employeeHours > 8.0) {
                     employeeHours = employeeHours - 8;
                     wage = (employeeHours * 115) + 800;
@@ -69,7 +67,7 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
                     totalRegularValue.setText("P" + wage);
                 }
                 break;
-            case "Probationary":
+            case "probationary":
                 if (employeeHours > 8.0) {
                     employeeHours = employeeHours - 8;
                     wage = (employeeHours * 100) + 720;
@@ -84,7 +82,7 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
                     totalRegularValue.setText("P" + wage);
                 }
                 break;
-            case "Part-Time":
+            case "part-time":
                 if (employeeHours > 8) {
                     employeeHours = employeeHours - 8;
                     wage = (employeeHours * 90) + 600;
