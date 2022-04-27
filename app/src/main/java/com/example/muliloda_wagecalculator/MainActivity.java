@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("empName",name);
             startActivity(intent);
 
-
+            break;
         }
     }
 }
