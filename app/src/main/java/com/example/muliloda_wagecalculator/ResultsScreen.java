@@ -35,12 +35,11 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
         Intent i = getIntent();
 
         String EmployeeType = i.getStringExtra("type");
+        String EmployeeName = i.getStringExtra("empName");
         Double EmployeeHours = Double.parseDouble(i.getStringExtra("hours"));
 
         hoursRenderedValue.setText(String.valueOf(EmployeeHours));
         compWage(EmployeeType, EmployeeHours, totalWageValue, totalRegularValue, totalOvertimeValue);
-
-
 
     }
 

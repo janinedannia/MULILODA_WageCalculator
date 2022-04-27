@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fillin2"
+        app:layout_constraintTop_toBottomOf="@+id/hours"
         app:layout_constraintVertical_bias="0.922" />
 
     <TextView
@@ -39,21 +39,21 @@
         app:layout_constraintVertical_bias="0.04" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/empName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alfa_slab_one"
         android:text="Employee Name"
         android:textColor="#ffffff"
         android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/fillinOne"
+        app:layout_constraintBottom_toTopOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.185"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultsTitle" />
 
     <EditText
-        android:id="@+id/fillinOne"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -66,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/empName" />
 
     <TextView
         android:id="@+id/employeeType"
@@ -80,14 +80,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fillinOne" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="192dp"
         android:layout_height="139dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/hours"
+        app:layout_constraintBottom_toTopOf="@+id/hoursWorked"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
@@ -140,21 +140,21 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/hours"
+        android:id="@+id/hoursWorked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alfa_slab_one"
         android:text="Hours Worked"
         android:textColor="#ffffff"
         android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/fillin2"
+        app:layout_constraintBottom_toTopOf="@+id/hours"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <EditText
-        android:id="@+id/fillin2"
+        android:id="@+id/hours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -167,7 +167,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hours" />
+        app:layout_constraintTop_toBottomOf="@+id/hoursWorked" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
