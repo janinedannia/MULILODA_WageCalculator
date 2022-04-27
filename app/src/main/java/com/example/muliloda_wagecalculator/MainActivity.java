@@ -30,14 +30,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         radioGroup = findViewById(R.id.radioGroup);
 
-        Compute = findViewById(R.id.btnCompute);
+        Compute = findViewById(R.id.Compute);
         Compute.setOnClickListener(this);
     }
 
     public void onClick(View v) {
 
 
-        if (v.getId() == R.id.btnCompute) {
+        if (v.getId() == R.id.Compute) {
             int selectedEmployeeType = radioGroup.getCheckedRadioButtonId();
 
             Compute = findViewById(selectedEmployeeType);
