@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -19,7 +18,6 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
 
     TextView totalWageValue, totalOvertimeValue, totalRegularValue, hoursRenderedValue, hoursOvertimeValue;
     RadioGroup radioGroup;
-    Button btnBack;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -33,7 +31,8 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
         hoursRenderedValue = findViewById(R.id.hoursRendered);
         hoursOvertimeValue = findViewById(R.id.hoursOvertime);
         radioGroup = findViewById(R.id.radioGroup);
-        btnBack = findViewById(R.id.btnBack);
+
+        Button btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(this);
 
         Intent i = getIntent();
@@ -44,6 +43,9 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
 
         hoursRenderedValue.setText(String.valueOf(EmployeeHours));
         calcWage(EmployeeType, EmployeeHours, totalWageValue, totalRegularValue, totalOvertimeValue);
+
+
+
     }
 
     @SuppressLint("SetTextI18n")
