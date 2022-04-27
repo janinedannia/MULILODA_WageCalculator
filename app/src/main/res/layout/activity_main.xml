@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9F79A1"
+    android:background="#6B8F77"
     tools:context=".MainActivity">
 
     <Button
@@ -163,13 +163,11 @@
         android:minHeight="48dp"
         android:text="Enter here"
         android:textColor="#ffffff"
-        app:layout_constraintBottom_toTopOf="@+id/btnCompute"
+        app:layout_constraintBottom_toTopOf="@+id/Compute"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hours" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
