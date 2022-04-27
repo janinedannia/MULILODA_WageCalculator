@@ -45,18 +45,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             String name = employeeName.getText().toString();
 
-            String hours = ( hoursWorked.getText().toString() );
+            String hours = (hoursWorked.getText().toString());
 
-            Intent intent = new Intent(this, ResultsScreen.class);
+            Intent intent = new Intent(MainActivity.this, ResultsScreen.class);
 
             intent.putExtra("type", type);
             intent.putExtra("hours", hours);
             intent.putExtra("employeeName", name);
-            startActivity(intent);
-        }
-    }
 
-    public void btnCompute(View view) {
+            startActivity(intent);
+
+
+        }
     }
 }
 
