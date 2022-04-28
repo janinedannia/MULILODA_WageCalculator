@@ -15,7 +15,11 @@ import android.widget.TextView;
 public class ResultsScreen extends AppCompatActivity implements View.OnClickListener {
 
 
-    TextView txtWage, txtOvertimeWage, txtRegularWage, txtHours, txtOvertimeHours;
+    TextView txtWage;
+    TextView txtOvertimeWage;
+    TextView txtRegularWage;
+    TextView txtHours;
+    TextView txtOvertimeHours;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -39,66 +43,67 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
         Double EmployeeHours = Double.parseDouble(i.getStringExtra("hours"));
 
         txtHours.setText(String.valueOf(EmployeeHours));
-        compWage(EmployeeType, EmployeeHours, txtWage, txtRegularWage, txtOvertimeHours);
+        calcWage(EmployeeType, EmployeeHours, txtWage, txtRegularWage, txtOvertimeHours);
 
     }
 
     @SuppressLint("SetTextI18n")
-    public void compWage(String employeeType, Double employeeHours, TextView txtWage, TextView txtOvertimeWage, TextView txtRegularWage) {
+    public void calcWage(String employeeType, Double employeeHours, TextView txtTotalWage, TextView txtRegularWage, TextView txtOTWage) {
         double totalWage = 0.0;
         double totalOTWage = 0.0;
 
         switch (employeeType) {
-            case "regular":
+            case "Regular Employee":
                 if (employeeHours > 8.0) {
                     employeeHours = employeeHours - 8;
                     totalWage = (employeeHours * 115) + 800;
                     totalOTWage = employeeHours * 115;
 
-                    txtWage.setText("P" + (totalWage));
-                    txtRegularWage.setText("P800");
-                    txtOvertimeWage.setText("P" + totalOTWage);
+                    txtTotalWage.setText("₱" + totalWage);
+                    txtRegularWage.setText("₱800");
+                    txtOTWage.setText("₱" + totalOTWage);
                 } else {
                     totalWage = employeeHours * 100;
-                    txtWage.setText("P" + (totalWage));
-                    txtRegularWage.setText("P" + totalWage);
+                    txtTotalWage.setText("₱" + totalWage);
+                    txtRegularWage.setText("₱" + totalWage);
                 }
                 break;
-            case "probationary":
-                if (employeeHours > 8.0) {
-                    employeeHours = employeeHours - 8;
-                    totalWage = (employeeHours * 100) + 720;
-                    totalOTWage = employeeHours * 100;
-
-                    txtWage.setText("P" + (totalWage));
-                    txtRegularWage.setText("P720");
-                    txtOvertimeWage.setText("P" + totalOTWage);
-                } else {
-                    totalWage = employeeHours * 90;
-                    txtWage.setText("P" + totalWage);
-                    txtRegularWage.setText("P" + totalWage);
-                }
-                break;
-            case "part-time":
+            case "Part-Time Worker":
                 if (employeeHours > 8.0) {
                     employeeHours = employeeHours - 8;
                     totalWage = (employeeHours * 90) + 600;
                     totalOTWage = employeeHours * 90;
 
-                    txtWage.setText("P" + (totalWage));
-                    txtRegularWage.setText("P600");
-                    txtOvertimeWage.setText("P" + totalOTWage);
+                    txtTotalWage.setText("₱" + totalWage);
+                    txtRegularWage.setText("₱600");
+                    txtOTWage.setText("₱" + totalOTWage);
                 } else {
                     totalWage = employeeHours * 75;
-                    txtWage.setText("P" + totalWage);
-                    txtRegularWage.setText("P" + totalWage);
+                    txtTotalWage.setText("₱" + totalWage);
+                    txtRegularWage.setText("₱" + totalWage);
+                }
+                break;
+            case "Probationary Employee":
+                if (employeeHours > 8.0) {
+                    employeeHours = employeeHours - 8;
+                    totalWage = (employeeHours * 100) + 720;
+                    totalOTWage = employeeHours * 100;
+
+                    txtTotalWage.setText("₱" + totalWage);
+                    txtRegularWage.setText("₱720");
+                    txtOTWage.setText("₱" + totalOTWage);
+                } else {
+                    totalWage = employeeHours * 90;
+                    txtTotalWage.setText("₱" + totalWage);
+                    txtRegularWage.setText("₱" + totalWage);
                 }
                 break;
         }
+    }
 
+    public void onClick(@NonNull View v) {
+        if (v.getId() == R.id.btnBack) {
+            startActivity(new Intent(ResultsScreen.this, MainActivity.class));
+        }
     }
-        public void onClick(@NonNull View v) {
-            if (v.getId() == R.id.btnBack) {
-                startActivity(new Intent(ResultsScreen.this, MainActivity.class));
-    }
-}}
+}
