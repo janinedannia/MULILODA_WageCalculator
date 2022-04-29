@@ -20,6 +20,8 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
     TextView txtRegularWage;
     TextView txtHours;
     TextView txtOvertimeHours;
+    String EmployeeName, EmployeeType;
+    Double EmployeeHours;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -38,12 +40,12 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
 
         Intent i = getIntent();
 
-        String EmployeeType = i.getStringExtra("type");
-        String EmployeeName = i.getStringExtra("empName");
-        Double EmployeeHours = Double.parseDouble(i.getStringExtra("hours"));
-
-        txtHours.setText(String.valueOf(EmployeeHours));
-        calcWage(EmployeeType, EmployeeHours, txtWage, txtRegularWage, txtOvertimeHours);
+       EmployeeType = i.getStringExtra("type");
+       EmployeeName = i.getStringExtra("empName");
+       EmployeeHours = Double.parseDouble(i.getStringExtra("hours"));
+       txtOvertimeHours.setText(String.valueOf(EmployeeHours - 8));
+       txtHours.setText(String.valueOf(EmployeeHours));
+       calcWage(EmployeeType, EmployeeHours, txtWage, txtRegularWage, txtOvertimeHours);
 
     }
 
@@ -53,7 +55,7 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
         double totalOTWage = 0.0;
 
         switch (employeeType) {
-            case "Regular Employee":
+            case "Regular":
                 if (employeeHours > 8.0) {
                     employeeHours = employeeHours - 8;
                     totalWage = (employeeHours * 115) + 800;
@@ -68,7 +70,7 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
                     txtRegularWage.setText("₱" + totalWage);
                 }
                 break;
-            case "Part-Time Worker":
+            case "Part-Time":
                 if (employeeHours > 8.0) {
                     employeeHours = employeeHours - 8;
                     totalWage = (employeeHours * 90) + 600;
@@ -83,7 +85,7 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
                     txtRegularWage.setText("₱" + totalWage);
                 }
                 break;
-            case "Probationary Employee":
+            case "Probationary":
                 if (employeeHours > 8.0) {
                     employeeHours = employeeHours - 8;
                     totalWage = (employeeHours * 100) + 720;

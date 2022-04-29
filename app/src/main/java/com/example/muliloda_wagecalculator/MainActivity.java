@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            case R.id.Compute:
             int selectedEmployeeType = radioGroup.getCheckedRadioButtonId();
 
-            Compute = findViewById(selectedEmployeeType);
+            btnSelected = findViewById(selectedEmployeeType);
 
-            String type = Compute.getText().toString();
+            String type = btnSelected.getText().toString();
 
             String name = employeeName.getText().toString();
             String hours = (hoursWorked.getText().toString());
