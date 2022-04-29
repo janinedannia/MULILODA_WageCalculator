@@ -60,7 +60,6 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
                     employeeHours = employeeHours - 8;
                     totalWage = (employeeHours * 115) + 800;
                     totalOTWage = employeeHours * 115;
-
                     txtTotalWage.setText("₱" + totalWage);
                     txtRegularWage.setText("₱800");
                     txtOTWage.setText("₱" + totalOTWage);
@@ -75,7 +74,6 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
                     employeeHours = employeeHours - 8;
                     totalWage = (employeeHours * 90) + 600;
                     totalOTWage = employeeHours * 90;
-
                     txtTotalWage.setText("₱" + totalWage);
                     txtRegularWage.setText("₱600");
                     txtOTWage.setText("₱" + totalOTWage);
@@ -90,7 +88,6 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
                     employeeHours = employeeHours - 8;
                     totalWage = (employeeHours * 100) + 720;
                     totalOTWage = employeeHours * 100;
-
                     txtTotalWage.setText("₱" + totalWage);
                     txtRegularWage.setText("₱720");
                     txtOTWage.setText("₱" + totalOTWage);
