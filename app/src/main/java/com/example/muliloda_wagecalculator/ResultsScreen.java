@@ -15,8 +15,8 @@ import android.widget.TextView;
 public class ResultsScreen extends AppCompatActivity implements View.OnClickListener {
 
 
-    TextView txtWage;
-    TextView txtOvertimeWage;
+    TextView txtTotalWage;
+    TextView txtOTWage;
     TextView txtRegularWage;
     TextView txtHours;
     TextView txtOvertimeHours;
@@ -29,8 +29,8 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results_screen);
 
-        txtWage = findViewById(R.id.totalWageValue);
-        txtOvertimeWage = findViewById(R.id.totalOvertimeValue);
+        txtTotalWage = findViewById(R.id.totalWageValue);
+        txtOTWage = findViewById(R.id.totalOvertimeValue);
         txtRegularWage = findViewById(R.id.totalRegularValue);
         txtHours = findViewById(R.id.hoursRenderedValue);
         txtOvertimeHours = findViewById(R.id.hoursOvertimeValue);
@@ -45,7 +45,7 @@ public class ResultsScreen extends AppCompatActivity implements View.OnClickList
        EmployeeHours = Double.parseDouble(i.getStringExtra("hours"));
        txtOvertimeHours.setText(String.valueOf(EmployeeHours - 8));
        txtHours.setText(String.valueOf(EmployeeHours));
-       calcWage(EmployeeType, EmployeeHours, txtWage, txtRegularWage, txtOvertimeHours);
+       calcWage(EmployeeType, EmployeeHours, txtTotalWage, txtRegularWage, txtOvertimeHours);
 
     }
 
